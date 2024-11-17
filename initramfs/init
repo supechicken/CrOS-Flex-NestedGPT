@@ -34,7 +34,7 @@ if [ ! -f /root/.rootfs_patched ]; then
   mount -t ext4 -o ro /dev/vda1 /mnt
 
   # update kernel modules and firmware
-  rm -rf /root/lib/modules/* /root/lib/firmware 
+  rm -rf /root/lib/modules/* /root/lib/firmware
   tar -xf /mnt/patches/modules.tar.zst -C /root
   tar -xf /mnt/patches/firmware.tar.zst -C /root
 

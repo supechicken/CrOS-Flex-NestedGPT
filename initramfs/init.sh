@@ -38,9 +38,6 @@ if [ ! -f /root/.rootfs_patched ]; then
   tar -xf /mnt/patches/modules.tar.zst -C /root
   tar -xf /mnt/patches/firmware.tar.zst -C /root
 
-  # blacklist amdgpu
-  echo 'blacklist amdgpu' > /root/etc/modprobe.d/blacklist.conf
-
   # LD_PRELOAD hack for sudo
   tar -xf /mnt/patches/minijail-hack.tar.zst -C /root
   sed -i '1s,^,env LD_PRELOAD=/usr/lib64/minijail-hack.so\n,' /root/etc/init/ui.conf
